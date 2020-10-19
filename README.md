@@ -1,16 +1,21 @@
 # vue-chat
 
-## Project setup
+## About
+Client chat with Vue project, See Vue [Documentation](https://cli.vuejs.org/).
+socket-server: [chat-socket-server](https://github.com/ifanfairuz/chat-socket-server/)
+rest-api: [go-chat-rest-api](https://github.com/ifanfairuz/go-chat-rest-api/)
+
+### Installation
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+### Serving app
 ```
 yarn serve
 ```
 
-### Compiles and minifies for production
+### Build for production
 ```
 yarn build
 ```
@@ -19,6 +24,3 @@ yarn build
 ```
 yarn lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
