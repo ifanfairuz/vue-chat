@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="<%= BASE_URL %>dist/bootstrap/css/bootstrap.min.css">
   </head>
   <body>
     <noscript>
@@ -13,5 +16,11 @@
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    
+    <!-- jquery -->
+    <script src="<%= BASE_URL %>dist/jquery/jquery.min.js"></script>
+
+    <!-- bootstrap -->
+    <script src="<%= BASE_URL %>dist/bootstrap/js/bootstrap.min.js"></script>
   </body>
 </html>
