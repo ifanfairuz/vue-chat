@@ -1,28 +1,27 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div :class="{main: true, container: compact}">
+      <Chat v-if="isLogin"/>
+      <Login v-else/>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Chat from './pages/Chat.vue'
+import Login from './pages/Login.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Chat,
+    Login
+  },
+  data() {
+    return {
+      compact: true,
+      isLogin: true
+    }
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
