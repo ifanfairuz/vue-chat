@@ -60,6 +60,10 @@
     width: 300px;
 }
 
+.chat-history:not(.show) .profile>.dropdown {
+    position: unset;
+}
+
 .chat-wrapper .chat-content {
     flex: 1;
 }
@@ -97,7 +101,7 @@
 
 .current>.info-current,
 .profile>.info-profile {
-    float: 1;
+    flex: 1;
     margin-top: auto;
     margin-bottom: auto;
 }
@@ -118,7 +122,6 @@
 .profile>.info-profile>.desc {
     color: #555;
 }
-
 
 .chat-history .history {
     background-color: #fafafa;
@@ -206,4 +209,21 @@
 .form-conversation button.send {
     margin-left: 10px;
     background: transparent;
+}
+
+/* End of CHAT */
+
+/* LOGIN */
+.google-signin-btn>div {
+    background-color: transparent !important;
+    color: #fff;
+    box-shadow: none;
+}
+.abcRioButtonIcon{
+    background-color: #fff;
+}
+/* End of Login */
+
+.btn-transparent {
+    background-color: transparent;
 }
