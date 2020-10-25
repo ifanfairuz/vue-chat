@@ -32,6 +32,9 @@ export default {
         this.$router.go('Login')
       })
     }
+  },
+  computed: {
+    
   }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div :class="{'chat-history': true, show}">
-      <Profile :withDropdown="true" :logoutClickHandler="logoutClickHandler" />
+      <Profile :withDropdown="true" :logoutClickHandler="logoutClickHandler" :user="{image: me.image}" />
       <div class="history">
         <ul>
           <li v-for="(index) in 100" :key="index">
@@ -30,6 +30,12 @@ export default {
     logoutClickHandler: {
       type: Function,
       required: false
+    }
+  },
+  computed: {
+    me() {
+      const { email, name, image } = this.$store.getters.auth
+      return { email, name, image }
     }
   }
 }
