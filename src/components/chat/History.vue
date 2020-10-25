@@ -1,6 +1,6 @@
 <template>
   <div :class="{'chat-history': true, show}">
-      <Profile />
+      <Profile :withDropdown="true" :logoutClickHandler="logoutClickHandler" />
       <div class="history">
         <ul>
           <li v-for="(index) in 100" :key="index">
@@ -22,26 +22,14 @@ export default {
     Profile,
   },
   props: {
-    active: {
+    show: {
       type: Boolean,
       required: false,
       default: true
     },
-    onToggle: {
+    logoutClickHandler: {
       type: Function,
-      required: false,
-      default: (show) => show
-    }
-  },
-  data() {
-    return {
-      show: this.active
-    }
-  },
-  methods: {
-    setActive(show) {
-      this.show = show
-      this.$props.onToggle(show)
+      required: false
     }
   }
 }

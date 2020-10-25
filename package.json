@@ -9,14 +9,18 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vue-google-login": "^2.0.5",
+    "vue-router": "^3.2.0"
   },
   "devDependencies": {
     "@iconify-icons/mdi": "^1.0.18",
     "@iconify-icons/mdi-light": "^1.0.0",
     "@iconify/vue": "^1",
+    "@innologica/vue-dropdown-menu": "^0.1.4",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
