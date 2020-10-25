@@ -12,6 +12,14 @@
       <p v-if="'name' in user" class="name">{{ user.name }}</p>
       <p v-if="'name' in user" class="desc">{{ user.status_online ? 'Online' : lastSeen }}</p>
     </div>
+    <dropdown-menu v-if="withDropdown" v-model="dropdownShow" :right="true">
+      <button class="btn btn-transparent">
+        <Icon icon="dots-vertical" height="30" />
+      </button>
+      <div slot="dropdown">
+        <button class="dropdown-item" @click="logoutClickHandler">Logout</button>
+      </div>
+    </dropdown-menu>
   </div>
 </template>
 
@@ -19,15 +27,27 @@
   import Icon from '@iconify/vue'
   import IconChevronLeft from '@iconify-icons/mdi/chevron-left'
   import IconMenu from '@iconify-icons/mdi/menu'
+  import IconDotsVertical from '@iconify-icons/mdi/dots-vertical'
+  import DropdownMenu from '@innologica/vue-dropdown-menu'
   import moment from 'moment'
 
   Icon.addIcon('chevron-left', IconChevronLeft)
+  Icon.addIcon('dots-vertical', IconDotsVertical)
   Icon.addIcon('menu', IconMenu)
 
   export default {
     name: 'Chat-Profile',
     props: {
+      withDropdown: {
+        type: Boolean,
+        required: false,
+        default: false
+      },
       toggleClickHandler: {
+        type: Function,
+        required: false
+      },
+      logoutClickHandler: {
         type: Function,
         required: false
       },
@@ -43,7 +63,13 @@
       },
     },
     components:{
-      Icon
+      Icon,
+      DropdownMenu
+    },
+    data(){
+      return {
+        dropdownShow: false
+      }
     },
     computed: {
       lastSeen() {

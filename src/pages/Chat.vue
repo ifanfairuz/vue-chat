@@ -1,13 +1,16 @@
 <template>
-  <div class="chat-wrapper">
-    <History ref="historyComponent" :onToggle="onHistoryToggle" />
-    <Content ref="contentComponent" :onToggleClick="onToggleHistoryClick" :historyHidden="historyHidden" />
+  <div class="main container">
+    <div class="chat-wrapper">
+      <History ref="historyComponent" :show="!historyHidden" :logoutClickHandler="logout" />
+      <Content ref="contentComponent" :onToggleClick="onToggleHistoryClick" :historyHidden="historyHidden" />
+    </div>
   </div>
 </template>
 
 <script>
 import History from '../components/chat/History.vue'
 import Content from '../components/chat/Content.vue'
+import { logout } from '../handler/login'
 
 export default {
   name: 'Chat',
@@ -22,10 +25,12 @@ export default {
   },
   methods: {
     onToggleHistoryClick(isShow) {
-      this.$refs.historyComponent.setActive(isShow)
-    },
-    onHistoryToggle(isShow) {
       this.historyHidden = !isShow
+    },
+    logout() {
+      logout(() => {
+        this.$router.go('Login')
+      })
     }
   }
 }
